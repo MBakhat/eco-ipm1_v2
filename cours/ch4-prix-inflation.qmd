@@ -1,0 +1,59 @@
+---
+title: "Chapitre 4 — Coût de la vie & inflation"
+subtitle: "Partie II · Agrégats & niveau des prix"
+---
+
+## Thème 7 : Indice des prix à la consommation (IPC)
+
+L'IPC suit le coût d'un **panier fixe** de biens et services représentatif de la consommation des ménages.
+
+$$IPC_t = \frac{\text{Coût du panier aux prix de } t}{\text{Coût du même panier aux prix de base}} \times 100$$
+
+Un IPC de 125 signifie que le niveau des prix est **supérieur de 25 %** à celui de l'année de base (pas forcément en un an).
+
+### IPC global pondéré
+
+Chaque poste pèse selon sa **part dans les dépenses de consommation** des ménages :
+
+$$IPC = \sum_i w_i \times IPC_i \qquad \text{avec } \sum_i w_i = 1$$
+
+::: {.callout-tip title="Exemple corrigé"}
+Alimentation (60 %, indice 110) et transport (40 %, indice 120) :
+$IPC = 0{,}6 \times 110 + 0{,}4 \times 120 = 66 + 48 = 114$.
+:::
+
+### Pouvoir d'achat
+
+Le pouvoir d'achat compare l'évolution du **revenu nominal** à celle des **prix** :
+
+$$\text{Variation du pouvoir d'achat} = \left(\frac{1 + g_{\text{revenu}}}{1 + \pi} - 1\right) \times 100$$
+
+Revenu +3 %, prix +5 % : $1{,}03 / 1{,}05 - 1 \approx -1{,}9\,\%$ → le pouvoir d'achat **diminue**.
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 7](../quiz.html?theme=7){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 8 : Taux d'inflation
+
+$$\pi_t = \frac{IPC_t - IPC_{t-1}}{IPC_{t-1}} \times 100$$
+
+| Situation | Nom | Les prix… |
+|---|---|---|
+| $\pi > 0$ | Inflation | augmentent |
+| $\pi$ passe de 6 % à 3 % | Désinflation | augmentent **moins vite** |
+| $\pi < 0$ | Déflation | baissent |
+
+::: {.callout-warning title="Pièges fréquents"}
+- **Diviser par la valeur de départ** : IPC de 120 à 126 → $6/120 = 5\,\%$ (et non 6 %).
+- **Points vs pourcentage** : une inflation qui passe de 4 % à 7 % augmente de **3 points** (soit +75 % en variation relative).
+- **Cumul** : +10 % puis +10 % = $1{,}1^2 = 1{,}21$ → **+21 %**.
+:::
+
+::: {.callout-note title="À manipuler"}
+Le [calculateur d'IPC](../simulateurs.qmd#ipc-et-pouvoir-dachat) compare inflation et hausse des salaires.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 8](../quiz.html?theme=8){.btn .btn-outline-primary .btn-sm}
+:::

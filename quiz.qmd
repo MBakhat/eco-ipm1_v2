@@ -1,0 +1,46 @@
+---
+title: "Auto-évaluation"
+subtitle: "Banque officielle de questions · barème du midterm : +1 bonne réponse, −0,5 mauvaise réponse"
+toc: false
+css: assets/quiz.css
+include-after-body:
+  text: |
+    <script src="assets/quiz.js"></script>
+---
+
+Les réponses sont mélangées à chaque session et votre progression est enregistrée dans ce navigateur. Après chaque question, une explication détaillée s'affiche avec un lien vers la fiche de cours. La note sur 20 se calcule par $\text{note} = \max(0,\ \text{score}) / n \times 20$.
+
+```{=html}
+<div id="quiz-app">
+  <div class="quiz-toolbar">
+    <label for="quiz-scope" class="form-label mb-0 fw-semibold">Entraînement :</label>
+    <select id="quiz-scope" class="form-select form-select-sm"></select>
+    <button id="quiz-reset" class="btn btn-sm btn-outline-secondary" type="button">↺ Recommencer</button>
+  </div>
+
+  <div id="quiz-card" class="quiz-card">
+    <div class="quiz-meta">
+      <span>Question <strong id="q-idx">–</strong> / <strong id="q-total">–</strong> · Répondues : <strong id="q-done">0</strong></span>
+      <span class="quiz-score">Score : <strong id="q-score">0,0</strong> pt</span>
+    </div>
+    <div class="progress quiz-progress" role="progressbar" aria-label="Progression">
+      <div id="q-bar" class="progress-bar" style="width:0%"></div>
+    </div>
+    <div class="quiz-tags">
+      <a id="q-theme" class="badge text-bg-primary text-decoration-none" href="#">Thème</a>
+      <span id="q-multi" class="badge text-bg-warning d-none">☑ Plusieurs réponses possibles</span>
+    </div>
+    <h3 id="q-prompt" class="quiz-prompt">Chargement des questions…</h3>
+    <div id="q-options" class="quiz-options"></div>
+    <div id="q-feedback" class="quiz-feedback d-none"></div>
+    <div class="quiz-nav">
+      <button id="btn-prev" class="btn btn-outline-secondary" type="button">← Précédente</button>
+      <button id="btn-validate" class="btn btn-primary" type="button">Valider</button>
+      <button id="btn-next" class="btn btn-dark d-none" type="button">Suivante →</button>
+      <button id="btn-finish" class="btn btn-success d-none" type="button">Voir le bilan ✓</button>
+    </div>
+  </div>
+
+  <div id="quiz-results" class="quiz-card d-none"></div>
+</div>
+```

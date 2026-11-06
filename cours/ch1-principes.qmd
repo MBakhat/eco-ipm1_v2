@@ -1,0 +1,67 @@
+---
+title: "Chapitre 1 — Principes fondamentaux"
+subtitle: "Partie I · Fondements & circuit économique"
+---
+
+## Thème 1 : Principes généraux
+
+### Rareté, arbitrage et coût d'opportunité
+
+Les ressources (temps, revenu, capital) sont **rares** : tout choix implique un **arbitrage**.
+
+- **Arbitrage** : choisir entre plusieurs usages d'une même ressource (travailler *ou* se reposer).
+- **Coût d'opportunité** : ce à quoi l'on renonce pour obtenir quelque chose — la meilleure alternative sacrifiée.
+
+::: {.callout-tip title="Exemple"}
+Un étudiant renonce à une soirée cinéma pour réviser : la soirée cinéma est le **coût d'opportunité** de ses révisions.
+:::
+
+### Raisonner à la marge et réagir aux incitations
+
+- Une **variation marginale** est un petit ajustement d'un plan d'action.
+- Un agent rationnel agit si l'**avantage marginal** dépasse le **coût marginal**.
+- Les agents **réagissent aux incitations** : une hausse du prix de l'essence réduit la consommation d'essence ; un avantage fiscal stimule l'investissement immobilier.
+
+### Échange, marché et rôle de l'État
+
+- L'**échange** permet la **spécialisation** et l'accès à une plus grande variété de biens ; il améliore la productivité.
+- Dans une **économie de marché**, ménages et entreprises décident ; les prix coordonnent leurs choix (la **main invisible** d'Adam Smith).
+- L'État améliore le fonctionnement du marché en **protégeant les droits de propriété** et en corrigeant les **défaillances de marché**, comme les **externalités** (ex. la pollution industrielle).
+
+### Agents économiques
+
+| Agent | Fonction principale | Ressource principale |
+|---|---|---|
+| Ménages | Consommer | Revenus du travail et transferts sociaux |
+| Sociétés non financières | Produire des biens et services marchands | Ventes |
+| Sociétés financières (ex. BCP) | Intermédiation financière | Intérêts, commissions |
+| Administrations publiques | Services non marchands, redistribution | Prélèvements obligatoires |
+
+### Monnaie, prix et niveau de vie
+
+- Le **niveau de vie** dépend de la **capacité à produire** des biens et services (productivité).
+- À long terme, l'**inflation** provient d'une croissance excessive de la **quantité de monnaie**.
+- À court terme, une hausse de la masse monétaire peut **réduire le chômage** (arbitrage inflation–chômage).
+
+### Outil : taux de variation et taux cumulés
+
+$$\text{Taux de variation} = \frac{V_{\text{arrivée}} - V_{\text{départ}}}{V_{\text{départ}}} \times 100$$
+
+Pour des évolutions successives, on **multiplie les coefficients multiplicateurs** (on n'additionne jamais les taux) :
+
+$$CM_{\text{global}} = CM_1 \times CM_2 \times \dots \times CM_n$$
+
+::: {.callout-tip title="Exemples corrigés"}
+- +10 % par an pendant 3 ans : $1{,}1^3 = 1{,}331$, soit **+33,1 %** (et non +30 %).
+- +10 % puis −10 % sur 1 000 : $1000 \times 1{,}1 \times 0{,}9 = 990$.
+- Une production qui **triple** : $CM = 3$, taux $= (3 - 1) \times 100 =$ **+200 %**.
+:::
+
+::: {.callout-warning title="Pièges fréquents"}
+- Confondre « tripler » (+200 %) et « +300 % ».
+- Additionner des taux successifs.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 1](../quiz.html?theme=1){.btn .btn-outline-primary .btn-sm}
+:::

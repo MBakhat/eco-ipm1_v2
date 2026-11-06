@@ -1,0 +1,55 @@
+---
+title: "Chapitre 2 — Circuit économique"
+subtitle: "Partie I · Fondements & circuit économique"
+---
+
+## Thème 4 : Flux réels et flux monétaires
+
+Dans le circuit simplifié, **ménages** et **entreprises** se rencontrent sur deux marchés. À chaque **flux réel** (bien, service ou travail) correspond un **flux monétaire** de sens opposé.
+
+```{mermaid}
+flowchart LR
+  M[Ménages] -- "Travail (flux réel)" --> E[Entreprises]
+  E -- "Salaires (flux monétaire)" --> M
+  E -- "Biens & services (flux réel)" --> M
+  M -- "Dépenses de consommation (flux monétaire)" --> E
+```
+
+| Marché | Flux réel | Flux monétaire |
+|---|---|---|
+| Biens et services | Biens et services : entreprises → ménages | Dépenses de consommation : ménages → entreprises |
+| Travail | Travail : ménages → entreprises | Salaires : entreprises → ménages |
+
+Les ménages **offrent du travail** et **demandent des biens** ; les entreprises **demandent du travail** et **offrent des biens**.
+
+::: {.callout-warning title="Piège"}
+Un flux réel n'est pas limité aux biens matériels : les **services** et le **travail** sont aussi des flux réels.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 4](../quiz.html?theme=4){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 5 : Tableau des ressources et des emplois (TRE)
+
+::: {.callout-important title="Règle d'or"}
+Toute opération monétaire est un **emploi** pour l'agent qui **paie** et une **ressource** pour l'agent qui **reçoit**.
+:::
+
+| Opération | Ménage | Entreprise |
+|---|---|---|
+| Salaire versé | **Ressource** (marché du travail) | **Emploi** (marché du travail) |
+| Achat de biens de consommation | **Emploi** (marché des biens) | **Ressource** (marché des biens) |
+
+::: {.callout-tip title="Exemple corrigé"}
+Un ménage reçoit 6 000 DH de salaire et consomme 4 800 DH.
+
+| Ressources | | Emplois | |
+|---|---:|---|---:|
+| Salaire | 6 000 | Consommation | 4 800 |
+| | | *Solde : épargne* | *1 200* |
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 5](../quiz.html?theme=5){.btn .btn-outline-primary .btn-sm}
+:::

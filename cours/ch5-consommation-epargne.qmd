@@ -1,0 +1,81 @@
+---
+title: "Chapitre 5 — Consommation & épargne"
+subtitle: "Partie III · Modèle keynésien (2 agents)"
+---
+
+Le revenu disponible se partage entre consommation et épargne : $Y_d = C + S$. Toutes les propriétés de ce chapitre en découlent.
+
+## Thème 11 : Fonction de consommation keynésienne
+
+$$C = C_0 + cY_d \qquad (0 < c < 1)$$
+
+- $C_0$ : **consommation autonome** (incompressible), ordonnée à l'origine.
+- $cY_d$ : **consommation induite** par le revenu ; $c$ est la pente.
+- Sans État, il n'y a ni impôts ni transferts : $Y_d = Y$.
+- Une hausse de $C_0$ (à $c$ constant) déplace la droite **parallèlement vers le haut**.
+
+::: {.callout-tip title="Exemple corrigé"}
+$C = 200 + 0{,}75Y$, avec $Y = 2\,000$ : consommation induite $= 1\,500$, consommation totale $= 1\,700$. Si $Y$ augmente de 400, $\Delta C = 0{,}75 \times 400 = 300$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 11](../quiz.html?theme=11){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 2 : Propension marginale à consommer (PmC)
+
+$$c = \frac{\Delta C}{\Delta Y_d}$$
+
+Fraction de chaque dirham **supplémentaire** consacrée à la consommation. Avec $c = 0{,}6$, le ménage consomme 60 DH de plus pour chaque hausse de 100 DH de revenu.
+
+::: {.callout-tip title="Exemple corrigé"}
+$Y_d$ passe de 5 000 à 6 000 et $C$ de 4 000 à 4 600 : $c = 600 / 1000 = 0{,}6$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 2](../quiz.html?theme=2){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 3 : Propension moyenne à consommer (PMC)
+
+$$PMC = \frac{C}{Y_d}$$
+
+Avec $C = C_0 + cY_d$ : $PMC = \dfrac{C_0}{Y_d} + c$. Si $C_0 > 0$, la PMC **diminue** quand $Y_d$ augmente et **tend vers $c$**. Une PMC supérieure à 1 signifie que le ménage **désépargne**.
+
+::: {.callout-warning title="Piège"}
+Ne pas confondre PMC (rapport de **niveaux**) et PmC (rapport de **variations**). Pour $C = 200 + 0{,}6Y_d$ et $Y_d = 1\,000$ : $PMC = 800/1000 = 0{,}8$ alors que $c = 0{,}6$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 3](../quiz.html?theme=3){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 9 : Propension marginale à épargner (PmS)
+
+$$s = \frac{\Delta S}{\Delta Y_d} \qquad c + s = 1$$
+
+Si $C = C_0 + cY_d$, alors la fonction d'épargne est :
+
+$$S = Y_d - C = -C_0 + (1 - c)Y_d$$
+
+::: {.callout-tip title="Exemple corrigé"}
+$C = 0{,}7Y + 3$ donne $S = Y - C = 0{,}3Y - 3$. Le revenu augmente de 20 et la consommation de 14 : $c = 0{,}7$, donc $s = 0{,}3$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 9](../quiz.html?theme=9){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 10 : Propension moyenne à épargner (PMS)
+
+$$PMS = \frac{S}{Y_d} \qquad PMC + PMS = 1$$
+
+Avec $C_0 > 0$, la PMS **augmente** avec le revenu et **tend vers $s$**. Elle est négative en cas de désépargne.
+
+::: {.callout-tip title="Exemple corrigé"}
+$Y_d = 4\,000$, $C = 4\,400$ : $S = -400$, donc $PMS = -0{,}10$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 10](../quiz.html?theme=10){.btn .btn-outline-primary .btn-sm}
+:::

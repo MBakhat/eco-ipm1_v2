@@ -1,0 +1,59 @@
+---
+title: "Chapitre 8 — L'intégration du secteur public"
+subtitle: "Partie IV · Intervention de l'État (3 agents)"
+---
+
+## Thème 15 : Le rôle économique de l'État
+
+Les trois fonctions de Musgrave :
+
+| Fonction | Objectif | Exemples |
+|---|---|---|
+| **Allocation** | Fournir les biens collectifs, corriger les défaillances de marché | Routes, écoles, taxe sur la pollution |
+| **Redistribution** | Réduire les inégalités | Impôts progressifs, prestations sociales |
+| **Stabilisation** | Lisser la conjoncture | Hausse de G en récession |
+
+Avec l'État, le revenu disponible devient :
+
+$$Y_d = Y - T + TR$$
+
+Un **transfert** (TR) est versé **sans contrepartie productive** (allocation sociale). Le salaire d'un fonctionnaire n'est **pas** un transfert.
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 15](../quiz.html?theme=15){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 16 : Impôts et taxes
+
+| Type d'impôt | Écriture | Revenu disponible |
+|---|---|---|
+| Forfaitaire | $T = T_0$ | $Y_d = Y - T_0$ |
+| Proportionnel | $T = tY$ | $Y_d = (1 - t)Y$ |
+
+- **Impôt direct** : payé par le contribuable sur son revenu (IR).
+- **Impôt indirect** : inclus dans le prix (TVA, accises). Le consommateur final le **supporte** ; l'entreprise le **collecte** et le **reverse**.
+- Les impôts sont un **flux monétaire** des ménages vers l'État : **emploi** pour les ménages, **ressource** pour l'État.
+
+::: {.callout-tip title="Exemple corrigé"}
+$C = 200 + 0{,}8Y_d$. Une hausse de l'impôt forfaitaire de 100 réduit $Y_d$ de 100 et la consommation de **80** seulement : les 20 restants sont pris sur l'épargne.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 16](../quiz.html?theme=16){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 17 : Dépenses publiques G
+
+$G$ désigne les **achats publics de biens et services** (matériel d'hôpital, construction d'école, fournitures). Il **exclut** les transferts (allocations) et les opérations financières (remboursement d'emprunt).
+
+$$Z = C + I + G \qquad \text{Solde budgétaire} = T - G$$
+
+Un solde négatif est un **déficit**, un solde positif un **excédent**.
+
+::: {.callout-tip title="Exemple corrigé"}
+$T = 500$, $G = 600$ : solde $= -100$, soit un déficit de 100.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 17](../quiz.html?theme=17){.btn .btn-outline-primary .btn-sm}
+:::

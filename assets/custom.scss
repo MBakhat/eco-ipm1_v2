@@ -1,0 +1,55 @@
+/*-- scss:defaults --*/
+$primary: #1e40af;
+$success: #047857;
+$danger: #be123c;
+$warning: #b45309;
+$body-bg: #ffffff;
+$font-size-root: 16px;
+$border-radius: .6rem;
+
+/*-- scss:rules --*/
+.navbar-brand { font-weight: 800; letter-spacing: -.01em; }
+
+/* Hero on the home page */
+.hero {
+  background: linear-gradient(120deg, #172554, #1e40af 60%, #3730a3);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  margin: .5rem 0 1.75rem;
+  h1, h2, p { color: #fff; }
+  h2 { margin-top: 0; border: none; }
+  p { opacity: .9; max-width: 46rem; }
+  .btn { margin: .25rem .4rem .25rem 0; }
+}
+
+/* Small formula cards */
+.formula-card {
+  border: 1px solid #e2e8f0;
+  border-radius: .8rem;
+  padding: 1rem 1.1rem;
+  height: 100%;
+  background: #fff;
+  overflow-x: auto;
+  .label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #64748b; }
+  p { margin: .35rem 0 0; }
+}
+
+.part-card {
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid $primary;
+  border-radius: .6rem;
+  padding: .9rem 1rem;
+  height: 100%;
+  strong { color: $primary; }
+  p { margin: .3rem 0 0; font-size: .92rem; }
+}
+
+/* "S'entraîner" button under each theme */
+.train-link { margin: .25rem 0 1.25rem; }
+
+/* Simulator result table */
+.sim-results table { width: 100%; font-size: .95rem; }
+.sim-results td { padding: .3rem .4rem; border-bottom: 1px solid #f1f5f9; }
+.sim-results td:last-child { text-align: right; font-weight: 700; }
+.sim-note { font-size: .9rem; padding: .6rem .8rem; border-radius: .5rem; background: #fffbeb; border: 1px solid #fcd34d; }

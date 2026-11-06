@@ -1,0 +1,28 @@
+# Publie automatiquement le site sur GitHub Pages à chaque "push" sur la branche main.
+name: Publier le site Quarto
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Construire et publier sur la branche gh-pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,82 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "cours/*.qmd"
+  resources:
+    - assets/questions.json
+    - assets/quiz.js
+
+lang: fr
+
+website:
+  title: "Principes d'Économie"
+  description: "Cours, simulateurs et auto-évaluation — IPM1, Pr. BAKHAT"
+  site-url: "https://VOTRE-NOM.github.io/eco-ipm1/"   # ← à adapter (étape 5)
+  search: true
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: "Accueil"
+      - text: "Cours"
+        menu:
+          - text: "Partie I — Fondements & circuit"
+          - cours/ch1-principes.qmd
+          - cours/ch2-circuit.qmd
+          - text: "---"
+          - text: "Partie II — Agrégats & prix"
+          - cours/ch3-pib.qmd
+          - cours/ch4-prix-inflation.qmd
+          - text: "---"
+          - text: "Partie III — Modèle keynésien (2 agents)"
+          - cours/ch5-consommation-epargne.qmd
+          - cours/ch6-investissement.qmd
+          - cours/ch7-equilibre-2-agents.qmd
+          - text: "---"
+          - text: "Partie IV — Intervention de l'État (3 agents)"
+          - cours/ch8-etat.qmd
+          - cours/ch9-equilibre-3-agents.qmd
+      - href: simulateurs.qmd
+        text: "Simulateurs"
+      - href: quiz.qmd
+        text: "Auto-évaluation"
+  sidebar:
+    - title: "Cours"
+      style: docked
+      contents:
+        - section: "Partie I — Fondements & circuit"
+          contents:
+            - cours/ch1-principes.qmd
+            - cours/ch2-circuit.qmd
+        - section: "Partie II — Agrégats & prix"
+          contents:
+            - cours/ch3-pib.qmd
+            - cours/ch4-prix-inflation.qmd
+        - section: "Partie III — Modèle keynésien (2 agents)"
+          contents:
+            - cours/ch5-consommation-epargne.qmd
+            - cours/ch6-investissement.qmd
+            - cours/ch7-equilibre-2-agents.qmd
+        - section: "Partie IV — Intervention de l'État (3 agents)"
+          contents:
+            - cours/ch8-etat.qmd
+            - cours/ch9-equilibre-3-agents.qmd
+  page-footer:
+    center: "Principes d'Économie · Filière IPM1 · 2026/2027 · Pr. BAKHAT"
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/custom.scss]
+    toc: true
+    toc-title: "Sur cette page"
+    html-math-method:
+      method: katex
+      url: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/"
+    number-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true

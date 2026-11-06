@@ -1,0 +1,42 @@
+---
+title: "Chapitre 6 — Investissement des entreprises"
+subtitle: "Partie III · Modèle keynésien (2 agents)"
+---
+
+## Thème 12 : Fonction d'investissement
+
+### Qu'est-ce qu'investir ?
+
+L'investissement (FBCF) est l'acquisition de **biens de production durables** : machines, équipements, bâtiments.
+
+| Est un investissement | N'est pas un investissement |
+|---|---|
+| Achat d'une nouvelle machine | Facture d'électricité (consommation intermédiaire) |
+| Construction d'un entrepôt | Versement de salaires ou de dividendes |
+| | Achat d'actions existantes (placement financier) |
+
+$$\text{Investissement net} = \text{Investissement brut} - \text{Dépréciation du capital}$$
+
+### Deux formes de la fonction d'investissement
+
+**Investissement autonome** — indépendant du revenu courant :
+
+$$I = I_0$$
+
+**Investissement fonction du taux d'intérêt** :
+
+$$I = I_0 - b\,i \qquad (b > 0)$$
+
+Le taux d'intérêt est le **coût du financement** : une hausse de $i$ réduit l'investissement. Le paramètre $b$ mesure la **sensibilité** de l'investissement au taux.
+
+::: {.callout-tip title="Exemple corrigé"}
+$I = 500 - 20i$ avec $i = 5$ (soit 5 %) : $I = 500 - 100 = 400$.
+:::
+
+### Demande globale et équilibre sans État
+
+$$Z = C + I \qquad \text{Équilibre : } Y = C + I \iff S = I$$
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 12](../quiz.html?theme=12){.btn .btn-outline-primary .btn-sm}
+:::

@@ -1,0 +1,185 @@
+---
+title: "Simulateurs"
+subtitle: "Modifiez les paramètres et observez l'effet sur l'équilibre en temps réel"
+toc: true
+---
+
+```{ojs}
+//| echo: false
+fmt = (n) => Math.round(n).toLocaleString("fr-FR").replace(/ /g, " ")
+fmt2 = (n) => n.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})
+```
+
+## Croix keynésienne (modèle à 3 agents)
+
+L'équilibre $Y^*$ se trouve à l'intersection de la droite à 45° ($Z = Y$) et de la demande globale $Z = C + I + G$.
+
+```{ojs}
+//| echo: false
+//| panel: sidebar
+viewof c  = Inputs.range([0.5, 0.95], {step: 0.05, value: 0.75, label: "Propension marginale c"})
+viewof C0 = Inputs.range([0, 400], {step: 20, value: 100, label: "Consommation autonome C₀"})
+viewof I0 = Inputs.range([50, 500], {step: 25, value: 200, label: "Investissement I₀"})
+viewof G0 = Inputs.range([0, 500], {step: 25, value: 175, label: "Dépenses publiques G₀"})
+viewof regime = Inputs.radio(["Forfaitaire (T = T₀)", "Proportionnel (T = tY)"], {value: "Forfaitaire (T = T₀)", label: "Impôt"})
+viewof T0 = Inputs.range([0, 400], {step: 20, value: 100, label: "Impôt forfaitaire T₀", disabled: regime !== "Forfaitaire (T = T₀)"})
+viewof t  = Inputs.range([0, 0.5], {step: 0.05, value: 0.2, label: "Taux d'imposition t", disabled: regime === "Forfaitaire (T = T₀)"})
+viewof haavelmo = Inputs.toggle({label: "Haavelmo : ΔG = ΔT = +100", value: false, disabled: regime !== "Forfaitaire (T = T₀)"})
+```
+
+```{ojs}
+//| echo: false
+lump = regime === "Forfaitaire (T = T₀)"
+// Équilibre de base
+A     = lump ? C0 - c * T0 + I0 + G0 : C0 + I0 + G0
+slope = lump ? c : c * (1 - t)
+Ystar = A / (1 - slope)
+Tstar = lump ? T0 : t * Ystar
+Cstar = C0 + c * (Ystar - Tstar)
+Sstar = Ystar - Tstar - Cstar
+KG    = 1 / (1 - slope)
+KT    = -c / (1 - c)
+// Scénario Haavelmo (forfaitaire uniquement)
+showH = lump && haavelmo
+A1    = A + 100 - c * 100
+Y1    = A1 / (1 - c)
+xmax  = Math.max(400, Math.ceil(Math.max(Ystar, showH ? Y1 : 0) * 1.4 / 100) * 100)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 420,
+  x: {domain: [0, xmax], label: "Revenu Y (DH) →", grid: true},
+  y: {domain: [0, xmax], label: "↑ Demande Z (DH)", grid: true},
+  color: {legend: true, domain: ["Droite à 45° (Z = Y)", "Demande globale Z", ...(showH ? ["Après ΔG = ΔT = 100"] : [])], range: ["#94a3b8", "#1e40af", "#d97706"]},
+  marks: [
+    Plot.line([[0, 0], [xmax, xmax]], {stroke: () => "Droite à 45° (Z = Y)", strokeDasharray: "6,4", strokeWidth: 2}),
+    Plot.line([[0, A], [xmax, A + slope * xmax]], {stroke: () => "Demande globale Z", strokeWidth: 3}),
+    showH ? Plot.line([[0, A1], [xmax, A1 + c * xmax]], {stroke: () => "Après ΔG = ΔT = 100", strokeWidth: 3, strokeDasharray: "4,3"}) : null,
+    Plot.ruleX([Ystar], {y1: 0, y2: Ystar, stroke: "#be123c", strokeDasharray: "3,3"}),
+    Plot.dot([[Ystar, Ystar]], {r: 7, fill: "#be123c", stroke: "white", strokeWidth: 2}),
+    Plot.text([[Ystar, Ystar]], {text: [`Y* = ${fmt(Ystar)}`], dx: 12, dy: 16, textAnchor: "start", fontWeight: "bold", fill: "#be123c"}),
+    showH ? Plot.dot([[Y1, Y1]], {r: 6, fill: "#d97706", stroke: "white", strokeWidth: 2}) : null,
+    showH ? Plot.text([[Y1, Y1]], {text: [`Y₁ = ${fmt(Y1)}`], dx: -10, dy: -14, textAnchor: "end", fontWeight: "bold", fill: "#b45309"}) : null
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<div class="sim-results"><table>
+  <tr><td>Revenu d'équilibre Y*</td><td>${fmt(Ystar)} DH</td></tr>
+  <tr><td>Consommation C*</td><td>${fmt(Cstar)} DH</td></tr>
+  <tr><td>Recettes fiscales T</td><td>${fmt(Tstar)} DH</td></tr>
+  <tr><td>Solde budgétaire T − G</td><td style="color:${Tstar - G0 < 0 ? '#be123c' : '#047857'}">${fmt(Tstar - G0)} DH ${Tstar - G0 < -0.5 ? "(déficit)" : Tstar - G0 > 0.5 ? "(excédent)" : "(équilibré)"}</td></tr>
+  <tr><td>Multiplicateur K<sub>G</sub> = K<sub>I</sub></td><td style="color:#047857">${fmt2(KG)}</td></tr>
+  <tr><td>Multiplicateur fiscal K<sub>T</sub> ${lump ? "" : "(impôt forfaitaire)"}</td><td style="color:#be123c">${fmt2(KT)}</td></tr>
+  <tr><td>Vérification S + T = I + G</td><td>${fmt(Sstar + Tstar)} = ${fmt(I0 + G0)} ✓</td></tr>
+</table></div>`
+```
+
+```{ojs}
+//| echo: false
+showH ? html`<p class="sim-note"><strong>Théorème d'Haavelmo :</strong> G et T augmentent de 100 DH. Y* passe de ${fmt(Ystar)} à ${fmt(Y1)} DH, soit ΔY* = ${fmt(Y1 - Ystar)} DH = ΔG. Le multiplicateur à budget équilibré vaut K<sub>G</sub> + K<sub>T</sub> = 1.</p>`
+  : lump ? html`` : html`<p class="sim-note">Avec un impôt proportionnel, K<sub>G</sub> = 1 / [1 − c(1 − t)] est plus faible qu'avec un impôt forfaitaire (1 / (1 − c) = ${fmt2(1 / (1 - c))}) : l'impôt joue le rôle de <strong>stabilisateur automatique</strong>.</p>`
+```
+
+::: {.callout-tip title="À essayer"}
+1. Augmentez $c$ de 0,75 à 0,8 : de combien $Y^*$ augmente-t-il ? Pourquoi la droite Z devient-elle plus pentue ?
+2. Augmentez $G_0$ de 100, puis remettez-le et augmentez $T_0$ de 100 : comparez les deux effets.
+3. Passez en impôt proportionnel : le multiplicateur diminue. Pourquoi ?
+:::
+
+## Comparaison des multiplicateurs
+
+Effet sur $Y^*$ d'une impulsion de 100 DH, avec la valeur de $c$ choisie ci-dessus (impôt forfaitaire).
+
+```{ojs}
+//| echo: false
+mults = [
+  {impulsion: "ΔI = 100", dY: 100 / (1 - c)},
+  {impulsion: "ΔG = 100", dY: 100 / (1 - c)},
+  {impulsion: "ΔT = 100", dY: -100 * c / (1 - c)},
+  {impulsion: "ΔG = ΔT = 100", dY: 100}
+]
+Plot.plot({
+  height: 300,
+  x: {label: null, domain: mults.map(d => d.impulsion)},
+  y: {label: "↑ ΔY* (DH)", grid: true},
+  color: {domain: mults.map(d => d.impulsion), range: ["#1e40af", "#047857", "#be123c", "#d97706"]},
+  marks: [
+    Plot.barY(mults, {x: "impulsion", y: "dY", fill: "impulsion"}),
+    Plot.text(mults, {x: "impulsion", y: "dY", text: d => fmt(d.dY), dy: d => d.dY >= 0 ? -8 : 12, fontWeight: "bold"}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+## Le multiplicateur tour par tour
+
+Une dépense initiale de 100 DH devient un revenu, dont la fraction $c$ est redépensée au tour suivant, et ainsi de suite. Le cumul converge vers $100 \times K_I$.
+
+```{ojs}
+//| echo: false
+rounds = Array.from({length: 16}, (_, k) => ({tour: k, vague: 100 * c ** k}))
+  .map((d, i, arr) => ({...d, cumul: arr.slice(0, i + 1).reduce((s, x) => s + x.vague, 0)}))
+Plot.plot({
+  height: 300,
+  x: {label: "Tour de dépense →", tickFormat: d => d},
+  y: {label: "↑ ΔY cumulé (DH)", grid: true, domain: [0, 100 / (1 - c) * 1.08]},
+  marks: [
+    Plot.barY(rounds, {x: "tour", y: "cumul", fill: "#93c5fd"}),
+    Plot.barY(rounds, {x: "tour", y1: d => d.cumul - d.vague, y2: "cumul", fill: "#1e40af"}),
+    Plot.ruleY([100 / (1 - c)], {stroke: "#be123c", strokeDasharray: "5,4"}),
+    Plot.text([100 / (1 - c)], {x: 15, y: d => d, text: d => `Limite : ${fmt(d)}`, dy: -8, textAnchor: "end", fill: "#be123c", fontWeight: "bold"})
+  ]
+})
+```
+
+En bleu foncé, la dépense de chaque tour ($100 \times c^k$) ; en bleu clair, le cumul des tours précédents.
+
+## IPC et pouvoir d'achat
+
+```{ojs}
+//| echo: false
+viewof ipcIn = Inputs.form({
+  base: Inputs.number({label: "Coût du panier, année de base (DH)", value: 2000, min: 1}),
+  courant: Inputs.number({label: "Coût du panier, année courante (DH)", value: 2200, min: 0}),
+  salaire: Inputs.number({label: "Hausse du salaire nominal (%)", value: 3, step: 0.1})
+})
+```
+
+```{ojs}
+//| echo: false
+ipc  = ipcIn.courant / ipcIn.base * 100
+infl = ipc - 100
+pa   = ((1 + ipcIn.salaire / 100) / (1 + infl / 100) - 1) * 100
+html`<div class="sim-results"><table>
+  <tr><td>IPC (base 100)</td><td>${ipc.toFixed(1)}</td></tr>
+  <tr><td>Hausse des prix depuis la base</td><td style="color:${infl > 0 ? '#be123c' : '#047857'}">${infl >= 0 ? "+" : ""}${infl.toFixed(1)} %</td></tr>
+  <tr><td>Variation du pouvoir d'achat</td><td style="color:${pa < -0.05 ? '#be123c' : pa > 0.05 ? '#047857' : 'inherit'}">${pa >= 0 ? "+" : ""}${pa.toFixed(1)} % ${pa < -0.05 ? "(perte : prix > salaire)" : pa > 0.05 ? "(gain : salaire > prix)" : "(stable)"}</td></tr>
+</table></div>`
+```
+
+## PIB nominal, réel et déflateur
+
+```{ojs}
+//| echo: false
+viewof pibIn = Inputs.form({
+  q: Inputs.number({label: "Quantité produite Q", value: 150, min: 0}),
+  pt: Inputs.number({label: "Prix courant Pₜ (DH)", value: 12, min: 0}),
+  p0: Inputs.number({label: "Prix de l'année de base P₀ (DH)", value: 10, min: 0.01})
+})
+```
+
+```{ojs}
+//| echo: false
+nom  = pibIn.pt * pibIn.q
+reel = pibIn.p0 * pibIn.q
+html`<div class="sim-results"><table>
+  <tr><td>PIB nominal (Pₜ × Q)</td><td>${fmt(nom)} DH</td></tr>
+  <tr><td>PIB réel (P₀ × Q)</td><td style="color:#047857">${fmt(reel)} DH</td></tr>
+  <tr><td>Déflateur du PIB</td><td style="color:#1e40af">${reel > 0 ? (nom / reel * 100).toFixed(1) : "—"}</td></tr>
+</table></div>`
+```

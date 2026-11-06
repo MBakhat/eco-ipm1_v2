@@ -1,0 +1,42 @@
+---
+title: "Chapitre 3 — Production & PIB"
+subtitle: "Partie II · Agrégats & niveau des prix"
+---
+
+## Thème 6 : PIB nominal, PIB réel et déflateur
+
+### Définitions
+
+$$\text{PIB nominal}_t = \sum P_t \times Q_t \qquad \text{PIB réel}_t = \sum P_0 \times Q_t$$
+
+- Le **PIB nominal** valorise la production aux **prix courants**.
+- Le **PIB réel** la valorise aux **prix constants** d'une année de base : il neutralise l'effet des prix et mesure le **volume**.
+
+$$\text{Déflateur du PIB} = \frac{\text{PIB nominal}}{\text{PIB réel}} \times 100$$
+
+### Croissance économique
+
+$$g = \frac{\text{PIB réel}_t - \text{PIB réel}_{t-1}}{\text{PIB réel}_{t-1}} \times 100$$
+
+| Situation | PIB nominal | PIB réel |
+|---|---|---|
+| Prix +10 %, quantités stables | +10 % | inchangé |
+| Quantités +5 %, prix stables | +5 % | +5 % |
+
+::: {.callout-tip title="Exemple corrigé"}
+150 unités, prix courant 12 DH, prix de base 10 DH.
+
+- PIB nominal $= 12 \times 150 = 1\,800$ DH
+- PIB réel $= 10 \times 150 = 1\,500$ DH
+- Déflateur $= 1800 / 1500 \times 100 = 120$ (les prix ont augmenté de 20 % depuis la base)
+
+Réciproquement, si PIB nominal $= 1\,200$ et déflateur $= 120$ : PIB réel $= 1200 / 120 \times 100 = 1\,000$.
+:::
+
+::: {.callout-note title="À manipuler"}
+Le [calculateur de PIB](../simulateurs.qmd#pib-nominal-réel-et-déflateur) permet de vérifier ces calculs.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 6](../quiz.html?theme=6){.btn .btn-outline-primary .btn-sm}
+:::

@@ -1,0 +1,59 @@
+---
+title: "Chapitre 7 — Équilibre & multiplicateur (2 agents)"
+subtitle: "Partie III · Modèle keynésien (2 agents)"
+---
+
+## Thème 13 : Équilibre macroéconomique sans État
+
+Hypothèses : économie fermée, ménages et entreprises, **prix fixes**, capacités de production disponibles.
+
+$$Y = C + I_0 \quad \text{avec} \quad C = C_0 + cY$$
+
+$$Y = C_0 + cY + I_0 \;\Longrightarrow\; Y(1 - c) = C_0 + I_0 \;\Longrightarrow\; \boxed{Y^* = \frac{C_0 + I_0}{1 - c}}$$
+
+À l'équilibre : $S = I$, et $C^* = Y^* - I_0$.
+
+::: {.callout-tip title="Exemple corrigé"}
+$C = 100 + 0{,}75Y$, $I_0 = 200$ : $Y^* = 300 / 0{,}25 = 1\,200$, $C^* = 1\,000$, $S = 200 = I$.
+:::
+
+### Ajustement par les stocks
+
+| Situation | Conséquence immédiate | Ajustement |
+|---|---|---|
+| Production > demande | Accumulation **involontaire** de stocks | Baisse de la production |
+| Demande > production | **Déstockage** involontaire | Hausse de la production |
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 13](../quiz.html?theme=13){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 14 : Multiplicateur d'investissement $K_I$
+
+$$K_I = \frac{\Delta Y^*}{\Delta I} = \frac{1}{1 - c} = \frac{1}{s}$$
+
+### Pourquoi « multiplicateur » ?
+
+Une dépense initiale $\Delta I$ devient un revenu, dont une fraction $c$ est dépensée, devenant un nouveau revenu, et ainsi de suite :
+
+$$\Delta Y = \Delta I\,(1 + c + c^2 + c^3 + \dots) = \frac{\Delta I}{1 - c}$$
+
+| $c$ | 0,6 | 0,75 | 0,8 | 0,9 |
+|---|---|---|---|---|
+| $K_I$ | 2,5 | 4 | 5 | 10 |
+
+Plus la propension à consommer est forte, plus le multiplicateur est élevé. Il joue aussi **à la baisse**.
+
+::: {.callout-tip title="Exemples corrigés"}
+- $K_I = 4$ et $\Delta I = 50$ : $\Delta Y^* = 200$.
+- Pour obtenir $\Delta Y^* = 400$ avec $c = 0{,}75$ : $\Delta I = 400 / 4 = 100$.
+- $\Delta I = 100$ produit $\Delta Y^* = 400$ : $K_I = 4$, donc $c = 0{,}75$.
+:::
+
+::: {.callout-note title="À manipuler"}
+Le [simulateur](../simulateurs.qmd#le-multiplicateur-tour-par-tour) montre les vagues successives de dépense.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 14](../quiz.html?theme=14){.btn .btn-outline-primary .btn-sm}
+:::

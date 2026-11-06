@@ -1,0 +1,73 @@
+---
+title: "Chapitre 9 — Équilibre & politiques budgétaires"
+subtitle: "Partie IV · Intervention de l'État (3 agents)"
+---
+
+## Thème 18 : Équilibre macroéconomique à 3 agents
+
+$$Y = C + I + G \iff S + T = I + G \quad (\text{fuites} = \text{injections})$$
+
+### Avec un impôt forfaitaire $T = T_0$
+
+$$Y = C_0 + c(Y - T_0) + I_0 + G_0 \;\Longrightarrow\; \boxed{Y^* = \frac{C_0 - cT_0 + I_0 + G_0}{1 - c}}$$
+
+### Avec un impôt proportionnel $T = tY$
+
+$$\boxed{Y^* = \frac{C_0 + I_0 + G_0}{1 - c(1 - t)}}$$
+
+::: {.callout-tip title="Exemple corrigé"}
+$C = 100 + 0{,}75(Y - T)$, $T = 100$, $I = 200$, $G = 175$ :
+
+$Y^* = \dfrac{100 - 75 + 200 + 175}{0{,}25} = \dfrac{400}{0{,}25} = 1\,600$
+
+$Y_d = 1\,500$, $C = 1\,225$, $S = 275$. Vérification : $S + T = 375 = I + G$ ✓
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 18](../quiz.html?theme=18){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 19 : Multiplicateur des dépenses publiques $K_G$
+
+| Impôt | $K_G$ |
+|---|---|
+| Forfaitaire | $\dfrac{1}{1 - c}$ |
+| Proportionnel | $\dfrac{1}{1 - c(1 - t)}$ (plus faible) |
+
+L'impôt proportionnel **réduit le multiplicateur** : c'est un **stabilisateur automatique**.
+
+::: {.callout-tip title="Exemple corrigé"}
+$c = 0{,}8$, $t = 0{,}25$ : $K_G = 1 / (1 - 0{,}8 \times 0{,}75) = 1 / 0{,}4 = 2{,}5$. Avec un impôt forfaitaire, on aurait $K_G = 5$.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 19](../quiz.html?theme=19){.btn .btn-outline-primary .btn-sm}
+:::
+
+## Thème 20 : Multiplicateur fiscal $K_T$
+
+$$K_T = \frac{\Delta Y^*}{\Delta T} = \frac{-c}{1 - c} = -c \cdot K_G$$
+
+- $K_T$ est **négatif** : $T \uparrow \Rightarrow Y_d \downarrow \Rightarrow C \downarrow \Rightarrow Y^* \downarrow$.
+- $|K_T| < K_G$ : une baisse d'impôt est en partie **épargnée**, alors que G entre **entièrement** dans la demande.
+
+| $c$ | 0,6 | 0,75 | 0,8 |
+|---|---|---|---|
+| $K_G$ | 2,5 | 4 | 5 |
+| $K_T$ | −1,5 | −3 | −4 |
+
+### Théorème d'Haavelmo
+
+Si $\Delta G = \Delta T$ (budget équilibré) :
+
+$$\Delta Y^* = K_G\,\Delta G + K_T\,\Delta T = \frac{1 - c}{1 - c}\,\Delta G = \Delta G$$
+
+Le **multiplicateur à budget équilibré vaut 1**.
+
+::: {.callout-note title="À manipuler"}
+Activez l'option Haavelmo dans le [simulateur](../simulateurs.qmd) pour le vérifier.
+:::
+
+::: {.train-link}
+[🎯 S'entraîner sur le thème 20](../quiz.html?theme=20){.btn .btn-outline-primary .btn-sm}
+:::

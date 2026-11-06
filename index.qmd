@@ -1,0 +1,105 @@
+---
+title: "Principes d'Économie"
+subtitle: "IPM1 · Automne 2026/2027 · Pr. BAKHAT"
+toc: false
+---
+
+::: {.hero}
+## Plateforme d'entraînement & de modélisation
+
+Le cours est organisé en 4 parties et 9 chapitres. Chaque chapitre propose une fiche de synthèse et des exemples corrigés, et renvoie vers les questions d'entraînement du thème. Les simulateurs permettent de manipuler la croix keynésienne et les multiplicateurs.
+
+[📚 Commencer le cours](cours/ch1-principes.qmd){.btn .btn-light}
+[🧮 Ouvrir les simulateurs](simulateurs.qmd){.btn .btn-outline-light}
+[📝 Lancer un examen blanc](quiz.html?mode=exam20){.btn .btn-warning}
+:::
+
+## L'essentiel en 4 formules
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.formula-card}
+[Modèle 2 agents]{.label}
+
+$$Y^* = \frac{C_0 + I_0}{1 - c}$$
+
+Multiplicateur $K_I = \dfrac{1}{1-c} = \dfrac{1}{s}$
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.formula-card}
+[Modèle 3 agents]{.label}
+
+$$Y^* = \frac{C_0 - cT_0 + I_0 + G_0}{1 - c}$$
+
+Multiplicateur fiscal $K_T = \dfrac{-c}{1-c}$
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.formula-card}
+[Propensions]{.label}
+
+$$c + s = 1$$
+
+$$PMC + PMS = 1$$
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.formula-card}
+[Théorème d'Haavelmo]{.label}
+
+$$\Delta G = \Delta T \implies \Delta Y^* = \Delta G$$
+
+Multiplicateur à budget équilibré $= 1$
+:::
+:::
+
+:::
+
+## Structure du cours
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.part-card}
+**Partie I — Fondements & circuit**
+
+[Ch. 1 Principes fondamentaux](cours/ch1-principes.qmd) · [Ch. 2 Circuit économique](cours/ch2-circuit.qmd)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.part-card}
+**Partie II — Agrégats & niveau des prix**
+
+[Ch. 3 PIB nominal, réel, déflateur](cours/ch3-pib.qmd) · [Ch. 4 IPC & inflation](cours/ch4-prix-inflation.qmd)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.part-card}
+**Partie III — Modèle keynésien (2 agents)**
+
+[Ch. 5 Consommation & épargne](cours/ch5-consommation-epargne.qmd) · [Ch. 6 Investissement](cours/ch6-investissement.qmd) · [Ch. 7 Équilibre & $K_I$](cours/ch7-equilibre-2-agents.qmd)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.part-card}
+**Partie IV — Intervention de l'État (3 agents)**
+
+[Ch. 8 État, impôts, dépenses](cours/ch8-etat.qmd) · [Ch. 9 Équilibre, $K_G$, $K_T$](cours/ch9-equilibre-3-agents.qmd)
+:::
+:::
+
+:::
+
+## Comment utiliser ce site
+
+1. **Lire** la fiche du chapitre, puis refaire les exemples sans regarder la correction.
+2. **Manipuler** le [simulateur](simulateurs.qmd) : modifiez $c$, $G_0$ ou $T_0$ et prédisez l'effet sur $Y^*$ avant de regarder.
+3. **S'entraîner** avec le bouton 🎯 en bas de chaque thème, puis passer un [examen blanc](quiz.html?mode=exam20) au barème du midterm (+1 / −0,5).
